@@ -1,0 +1,19 @@
+name:                stack-reflex-webkitgtk
+version:             0.1.0.0
+license:             BSD3
+license-file:        LICENSE
+maintainer:          meditans@gmail.com
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+executable example
+  main-is:             example.hs
+  build-depends:       base >=4.9 && <4.10
+                     , reflex >= 0.5 && < 0.6
+                     , reflex-dom >= 0.4 && < 0.5
+                     , containers
+                     , text
+                     , safe
+                     , string-conv
+  default-language:    Haskell2010
