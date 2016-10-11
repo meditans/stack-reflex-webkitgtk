@@ -1,1 +1,36 @@
 * Reflex and Reflex-dom with ghc, stack, and webkitgtk
+
+Have you always wanted to try out and understand =reflex= and =reflex-dom=, but
+never got around to it because we (still) lack tooling support around =ghcjs=?
+
+Look no further, reflex-dom is just a stack install away:
+
+** Steps:
+   1) Clone this repo
+   2) =stack build gtk2hs-buildtools=
+   3) In the meantime, be sure to have the required system libraries (like
+      webkitgtk). If you miss some of the library, they will pop up as error in
+      the next step.
+   4) =stack build=
+   5) =stack exec example=
+
+** The code contains:
+   The tutorial for reflex at [[https://github.com/reflex-frp/reflex-platform][reflex platform]], but updated for the latest
+   version of =reflex= and =reflex-dom=. When compiled (with =ghc=!), you get a
+   desktop app using webkitgtk, with two textbox to input numeric values (the
+   border color changes to discriminate good from bad values), a dropdown menu
+   to select an operation between them, and a dynamic text to display the
+   results. You can see an image here:
+
+   #+CAPTION: Interface example
+   [[./example.png]]
+   
+** The benefits:
+   You can actually develop using =reflex= and =reflex-dom= with all the tools
+   you're used to (in this case, =stack=, =intero=, and the repl). When it will
+   be time to deploy your javascript application, just swap the =stack.yaml=
+   file with one targeting =ghcjs=, and you're done!
+
+** Acknowledgments
+   I'd like to thank the [[http://www.haskell-ita.it/][italian haskell community]] for their help and
+   suggestions, and especially [[https://github.com/paolino][Paolo]] for the tip on using =webkitgtk=.
